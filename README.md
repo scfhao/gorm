@@ -13,26 +13,22 @@ The fantastic ORM library for Golang, aims to be developer friendly.
 
 ## Overview
 
-* Full-Featured ORM (almost)
-* Associations (Has One, Has Many, Belongs To, Many To Many, Polymorphism)
-* Hooks (Before/After Create/Save/Update/Delete/Find)
-* Preloading (eager loading)
-* Transactions
-* Composite Primary Key
-* SQL Builder
-* Auto Migrations
-* Logger
-* Extendable, write Plugins based on GORM callbacks
-* Every feature comes with tests
-* Developer Friendly
+参考[此博客](https://www.jianshu.com/p/d65aafd66852)增加的对 Oracle 数据库的支持。版本号与原版将保持一致。如未用到 Oracle 数据库，请使用原版。
 
-## Getting Started
+建立此仓库旨在维护 dialect_oracle.go 文件，此文件来自上述博客。
 
-* GORM Guides [https://gorm.io](https://gorm.io)
+## 使用方法
 
-## Contributing
+```Go
+import (
+	_ "github.com/mattn/go-oci8"
+	_ "github.com/scfhao/gorm/dialects/oci8"
+	"github.com/scfhao/gorm"
+)
 
-[You can help to deliver a better GORM, check out things you can do](https://gorm.io/contribute.html)
+// if use SID, "username/password@tnsname"
+db, err := gorm.Open("oci8", "username/password@127.0.0.1:1521/ServiceName")
+```
 
 ## License
 

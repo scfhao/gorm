@@ -99,7 +99,7 @@ func (oracle) LimitAndOffsetSQL(limit, offset interface{}) (sql string) {
 
     if limit != nil {
         if parsedLimit, err := strconv.ParseInt(fmt.Sprint(limit), 0, 0); err == nil && parsedLimit >= 0 {
-            sql += fmt.Sprintf("ROWNUM <= %d", limit)
+            sql += fmt.Sprintf("AND ROWNUM <= %d", limit)
         }
     }
     return
