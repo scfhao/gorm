@@ -25,7 +25,7 @@ import (
 	_ "github.com/scfhao/gorm/dialects/mysql"
 	"github.com/scfhao/gorm/dialects/postgres"
 	_ "github.com/scfhao/gorm/dialects/sqlite"
-	"github.com/scfhao/now"
+	"github.com/jinzhu/now"
 )
 
 var (
